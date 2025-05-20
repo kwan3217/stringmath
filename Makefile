@@ -1,0 +1,9 @@
+CALC_E: CALC_E.PAS STRMATH.ppu
+	fpc -Mtp CALC_E.PAS
+
+STRMATH.ppu: STRMATH.PAS
+	fpc -Mtp STRMATH.PAS
+
+clean:
+	$(RM) CALC_E CALC_E.o STRMATH.o STRMATH.ppu
+
