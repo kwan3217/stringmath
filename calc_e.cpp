@@ -3,7 +3,7 @@
 #include <type_traits>
 #include <typeinfo>
 
-const size_t n_digits=1'000;
+const size_t n_digits=2'000'000;
 StringMath<n_digits,9> e4{1},term4{1};
 //StringMath<n_digits,1> e1{1},term1{1};
 char buf[n_digits+n_digits/5+n_digits/100+5]; // enough chars for
@@ -33,8 +33,9 @@ int main() {
   //    term1.sprintf(buf);
   //    printf("term1:         %s\n",buf);
   e4.sprintf_2M(buf);
-  printf("e =  \n\n%s\n",buf);
-  printf("%7ld\n",i);
+  FILE* ouf=fopen("e.strmath","wt");
+  fprintf(ouf,"e =  \n\n%s\n",buf);
+  fclose(ouf);
   //  printf("ref:           2.71828182845904523536028747135266249775724709369995\n");
 }
 
